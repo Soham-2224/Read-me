@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+// ** components
+import ImageBanner from "../components/ImageBanner"
+
+// ** shad-cn components
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+---
+
+<Layout title="Welcome to Astro.">
+    <main class=" grid place-items-center h-[calc(100vh-130px)]">
+        <div class="max-w-4xl text-center z-10">
+            <h3 class=" text-base font-semibold text-primary">Get started for free</h3>
+            <h1 class=" text-4xl font-extrabold mt-6">Craft Your GitHub Profile: Stand Out with a Customized ReadMe Generator!</h1>
+            <h3 class=" text-base font-medium text-label_gray mt-6">"Unlock Your Online Presence with Dynamic GitHub Profile ReadMe Creations"</h3>
+            <div class="flex w-full max-w-md mx-auto items-center space-x-2 mt-10">
+                <Input
+                type="text"
+                placeholder="Enter Github Username"
+                />
+                <Button type="submit" className=" whitespace-nowrap font-normal">Start Creating</Button>
+            </div>
+        </div>
+    </main>
+    <ImageBanner client:load />
+</Layout>
