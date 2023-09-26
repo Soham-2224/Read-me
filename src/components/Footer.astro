@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+
+// icons
+import { Icon } from "astro-icon";
+
+// assets
+import instagram from "../assets/images/instagram.png"
+import facebook from "../assets/images/facebook.png"
+import linkedin from "../assets/images/linkedin.png"
+import twitter from "../assets/images/twitter.png"
+---
+
+<footer class="fixed bottom-0 w-full py-3 backdrop-blur bg-primary_black/20">
+	<div class="sectionPadding | flex justify-between items-center max-sm:flex-col gap-y-4">
+		<div class="flex gap-8 items-center">
+			<h2 class=" font-bold text-2xl text-white"><a class="logo" href="/">READ.ME</a></h2>
+			<div class="grid grid-cols-4 gap-4 w-[150px]">
+				<Image class=' w-full cursor-pointer ' src={instagram} alt="instagram logo"/>
+				<Image class=' w-full cursor-pointer ' src={facebook} alt="instagram logo"/>
+				<Image class=' w-full cursor-pointer ' src={linkedin} alt="instagram logo"/>
+				<Image class=' w-full cursor-pointer ' src={twitter} alt="instagram logo"/>
+			</div>
+		</div>
+		<div class="flex items-center gap-1">
+			<h3 class=" text-base font-semibold text-white">Made with </h3>
+			<Icon name="mdi:heart" class=" w-5 h-5 md:w-6 md:h-6 text-red-600"  />
+			<h3 class=" text-base font-semibold text-white"> from <span class=" text-primary">INDIA</span></h3>
+		</div>
+	</div>
+</footer>
