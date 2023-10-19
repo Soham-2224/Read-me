@@ -10,19 +10,47 @@ import { Button } from "@/components/ui/button"
 ---
 
 <Layout title="Welcome to Astro.">
-    <main class=" grid place-items-center h-[calc(100vh-130px)]">
+    <main class="grid place-items-center h-[calc(100vh-130px)]">
         <div class="max-w-4xl text-center z-10">
-            <h3 class=" text-base font-semibold text-primary">Get started for free</h3>
-            <h1 class=" text-4xl font-extrabold mt-6">Craft Your GitHub Profile: Stand Out with a Customized ReadMe Generator!</h1>
-            <h3 class=" text-base font-medium text-label_gray mt-6">"Unlock Your Online Presence with Dynamic GitHub Profile ReadMe Creations"</h3>
-            <div class="flex w-full max-w-md mx-auto items-center space-x-2 mt-10">
+            <h3 class="text-base font-semibold text-primary">Get started for free</h3>
+            <h1 class="text-4xl font-extrabold mt-6">
+                Craft Your GitHub Profile: Stand Out with a Customized ReadMe Generator!
+            </h1>
+            <h3 class="text-base font-medium text-label_gray mt-6">
+                "Unlock Your Online Presence with Dynamic GitHub Profile ReadMe Creations"
+            </h3>
+            <form
+                id="form"
+                class="flex w-full max-w-md mx-auto items-center space-x-2 mt-10"
+            >
                 <Input
-                type="text"
-                placeholder="Enter Github Username"
+                required
+                    id="input"
+                    type="text"
+                    placeholder="Enter Github Username"
                 />
-                <Button type="submit" className=" whitespace-nowrap font-normal">Start Creating</Button>
-            </div>
+                <Button
+                    type="submit"
+                    className=" whitespace-nowrap font-normal"
+                >
+                    Start Creating
+                </Button>
+            </form>
         </div>
     </main>
     <ImageBanner client:load />
 </Layout>
+
+<script>
+    const form = document.querySelector("#form")
+    const input = document.querySelector("#input")
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault()
+
+        const username = input.value
+
+        // Redirect to the desired page
+        window.location.href = `/user?username=${username}`
+    })
+</script>

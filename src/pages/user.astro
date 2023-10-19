@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+// ** components
+import AllSteps from "../components/AllSteps"
+import StepsHeader from "@/components/StepsHeader.astro"
+---
+
+<Layout title="Create Read.me">
+    <main class="h-[calc(100vh-130px)] sectionPadding max-section-width mt-4">
+        <StepsHeader />
+        <AllSteps client:load />
+    </main>
+</Layout>

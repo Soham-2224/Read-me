@@ -8,14 +8,14 @@ import { Icon } from 'astro-icon'
 import profileImg from "../assets/images/profile.png"
 ---
 
-<header class=" sectionPadding | py-4 md:py-6 flex justify-between items-center mx-auto">
-		<h2 class=" font-bold text-2xl text-primary"><a class="logo" href="/">READ.ME</a></h2>
+<header class=" sectionPadding | py-3 md:py-4 flex justify-between items-center mx-auto">
+		<h2 class=" font-bold text-xl md:text-2xl text-primary"><a class="logo" href="/">READ.ME</a></h2>
 		<div class="flex items-center gap-2">
-			<Image class=' w-8 h-8 rounded-full' src={profileImg} alt="soham-2224 github profile image"/>
-			<h2 class=" hidden md:block text-base font-semibold text-primary_black">My Github</h2>
+			<Image class=' w-6 h-6 rounded-full' src={profileImg} alt="soham-2224 github profile image"/>
+			<h2 class=" hidden md:block text-sm font-semibold text-primary_black">My Github</h2>
 		</div>
 		<div class="flex items-center gap-2">
-			<Icon name="bi:stars" class=" w-5 h-5 md:w-6 md:h-6 text-[#F3B325]" />
-			<h2 class=" text-base md:text-lg font-medium text-primary">Star Us</h2>
+			<Icon name="bi:stars" class=" w-4 h-4 md:w-5 md:h-5 text-[#F3B325]" />
+			<h2 class=" text-sm md:text-base font-medium text-primary">Star Us</h2>
 		</div>
 </header>
