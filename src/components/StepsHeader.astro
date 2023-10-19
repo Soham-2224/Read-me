@@ -1,0 +1,46 @@
+---
+// import icons
+import { ArrowLeft } from "lucide-react"
+
+// import shad-cn components
+import { Button } from "./ui/button"
+---
+
+<div class="grid grid-cols-3 w-full">
+    <Button
+        id="backButton"
+        variant="ghost"
+        className=" w-fit"
+    >
+        <ArrowLeft className=" sm:mr-2 h-4 w-4" /> Back
+    </Button>
+    <h1
+        id="stepTitle"
+        class="relative text-lg md:text-2xl font-bold text-primary_black text-center before:w-1/4 md:before:w-1/6 before:h-0.5 before:bg-label_gray before:absolute before:bottom-1.5 md:before:bottom-0 before:left-1/2 before:-translate-x-1/2"
+    >
+    </h1>
+</div>
+
+<script>
+    // import stepStore
+    import { steps, prevStep } from "../store/stepsStore.js"
+
+    const titles = ["About Me", "Github Stats", "Skills", "Socials"]
+
+    const stepTitle = document.querySelector("#stepTitle")
+    const backButton = document.querySelector("#backButton")
+
+    steps.subscribe((obj) => {
+        stepTitle.innerHTML = titles[`${obj.value}`]
+    })
+
+    const backButtonClicked = () => {
+        if (!steps.get().value) {
+            window.location.href = "/"
+            return
+        }
+        prevStep()
+    }
+
+    backButton.addEventListener("click", () => backButtonClicked())
+</script>

@@ -52,7 +52,11 @@
   }
 }
 
-
+@layer utilities {
+    .max-section-width {
+      @apply max-w-[105rem] mx-auto;
+    }
+}
 
 
 /* important section paddings */
